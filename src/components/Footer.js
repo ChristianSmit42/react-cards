@@ -1,0 +1,11 @@
+import "./Footer.css";
+
+import React from "react";
+
+export default function Header(props){
+    return(
+        <footer className={"Footer"}>
+            <p>{props.children}</p>
+        </footer>
+    );
+}
