@@ -6,9 +6,8 @@ import React from "react";
 
 export default function MainContent(props) {
     return(
-        <main>
-            <button>button 1</button><button>button 2</button>
-            <div className={"Cards-Collection"}>
+        <main className ={"Main"}>
+            <div className={"Main-Content"}>
                 {
                     props.animals.map(
                         (animal)=> {
