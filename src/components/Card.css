@@ -1,7 +1,7 @@
 .Card{
     display: flex;
     border: 2px solid black;
-    width: calc(100vw/2);
+    width: 90vw;
     background-color: darkcyan;
 }
 .Card-Body{
