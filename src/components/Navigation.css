@@ -1,0 +1,9 @@
+.Navigation{
+    position:fixed;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}

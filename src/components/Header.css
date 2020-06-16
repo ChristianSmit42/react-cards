@@ -1,0 +1,13 @@
+.Header{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: darkmagenta;
+    position: fixed;
+    width: 100%;
+    top:0px;
+}
+.WebsiteTitle{
+    margin: 0px;
+    padding:0px;
+}
