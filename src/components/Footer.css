@@ -1,9 +1,12 @@
 .Footer{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     position: fixed;
     bottom: 0px;
     width: 100%;
     border: 2px solid black;
     background-color: darkmagenta;
+    padding: 5px 5px;
 }
+

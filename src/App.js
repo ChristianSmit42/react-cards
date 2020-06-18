@@ -5,31 +5,58 @@ import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 
-export default function App() {
-    const herbavore = [
-        {
-            title: "Giraffe",
-            text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
-            imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
-        },
-        {
-            title: "Affe",
-            text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
-            imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
-        },
-        {
-            title: "Biene",
-            text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
-            imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
-        },
-        {
-            title: "Kuh",
-            text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
-            imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
-        },
-    ]
 
-    const carnivore = [
+
+async function fetchAnimalData(){
+    const fetchCarnivore = fetch("https://api.jsonbin.io/b/5ee9e20719b60f7aa95be805")
+        .then(response=> response.json()).then(json=> json.animals);
+    return fetchCarnivore;
+}
+
+const herbivore = [
+    {
+        title: "Giraffe",
+        text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
+        imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
+    },
+    {
+        title: "Affe",
+        text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
+        imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
+    },
+    {
+        title: "Biene",
+        text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
+        imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
+    },
+    {
+        title: "Kuh",
+        text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
+        imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
+    },
+];
+
+const carnivore=[
+    {
+        tile:"loading",
+        text:"loading",
+        imgsource: "none",
+    }
+];
+
+export default function App() {
+    const [getItems, setItems] = React.useState(carnivore);
+
+    function handleClicksToHerbavore() {
+        setItems(herbivore);
+    }
+
+    function handleClicksToCarnivore() {
+        fetchAnimalData().then(response=> setItems(response));
+    }
+
+
+   /* const carnivore = [
         {
             title: "Hund",
             text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
@@ -50,17 +77,7 @@ export default function App() {
             text: "vhfsvjhfdbsgdh oisfbjhsdb djfbg ksdbiu v  dfgpisfpisdg ",
             imgsource: "https://i.pinimg.com/originals/59/30/c8/5930c86254cf1dc8064a63cc4c11f714.jpg",
         },
-    ]
-
-    const [getItems, setItems] = React.useState(carnivore);
-
-    function handleClicksToHerbavore(){
-        setItems(herbavore);
-    }
-    function handleClicksToCarnivore(){
-        setItems(carnivore);
-    }
-
+    ];*/
 
     return (
         <div className="App">

@@ -1,0 +1,8 @@
+.inputFields{
+    width: 60%;
+}
+.newsletterForm{
+    display: flex;
+    flex-flow: wrap row;
+    width: 70%;
+}
